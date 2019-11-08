@@ -1,0 +1,26 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    width:100%;
+    padding-top: 92px;
+    background-image:url(../imagenes/ambiente2.jpg);
+    background-attachment: fixed;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: cover;
+}
+
+.container h1{
+    font-size: 100px;
+    
+    font-family: 'Roboto Mono', monospace;
+}
+
+.column h3{
+    font-family: 'Indie Flower', cursive;
+}
