@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Guestbook - Una aplicación web sin servidor</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.0/css/bulma.min.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css?family=Yeon+Sung&display=swap');
+    @import url('https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap');
+    @import url('https://fonts.googleapis.com/css?family=Indie+Flower&display=swap');
+ </style>
+  <link rel="stylesheet" href="CSS/EstiloVariados.css" />
+</head>
+
+<body>
+  <section class="section">
+    <div class="container">
+      <h1 class="title is-1">
+        GUESTBOOK
+      </h1>
+      
+
+      <div class="columns">
+        <div class="column">
+          <h3 class="title is-3">
+            ¿Que opinas sobre el impacto ambiental?
+          </h3>
+          <div id="entries"></div>
+        </div>
+        <div class="column">
+          <h3 class="title is-3">
+            Añade tu comentario
+          </h3>
+          <form id="addEntry">
+            <div class="field">
+              <label class="label">Nombre</label>
+              <div class="control">
+                <input class="input" type="text" placeholder="tu nombre" id="name">
+              </div>
+            </div>
+            <div class="field">
+              <label class="label">Email</label>
+              <div class="control">
+                <input class="input" type="text" placeholder="tu email" id="email">
+              </div>
+            </div>
+            <div class="field">
+              <label class="label">Comentario</label>
+              <div class="control">
+                <textarea class="textarea" placeholder="tu comentario" id="comment"></textarea>
+              </div>
+            </div>
+            <div class="control">
+              <button class="button is-primary">Enviar comentario</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script id="entries-template" type="text/x-handlebars-template">
+    {{#each entries}}
+    <div class="box">
+      <article class="media">
+        <div class="media-left">
+          <figure class="image is-64x64">
+            <img src="{{icon}}" alt="No Image">
+          </figure>
+        </div>
+        <div class="media-content">
+          <div class="content">
+            <p>
+              <strong>{{name}}</strong> <small>{{email}}</small>
+              <br> {{comment}}
+            </p>
+          </div>
+        </div>
+      </article>
+    </div>
+    {{/each}}
+  </script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.10/handlebars.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="guestbook.js"></script>
+</body>
+
+</html>
